@@ -114,7 +114,20 @@ module.exports = function(grunt) {
 					},
 					components: 'my/app'
 				}
-			}
+			},
+			connect: {
+				server: {
+					options: {
+						port: 8001,
+						base: '<%= dir.dist %>', 
+						useAvailablePort: true,
+						keepalive: true,
+						 open: {
+							target: 'http://localhost:8001',
+							}
+						}
+					}
+				}
 		};
 	
 	
@@ -128,6 +141,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-mkdir');
 	grunt.loadNpmTasks('grunt-openui5');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	
 
 	grunt.registerTask('default', [
@@ -141,5 +155,18 @@ module.exports = function(grunt) {
 		"cssmin",
 		"openui5_preload"
 	]);
-
+	
+	
+	grunt.registerTask('localhost', [
+		"clean",
+		"mkdir",
+		"copy:copyToDist",
+		"copy:copyDbgToDist",
+		"xmlmin",
+		"uglify",
+		'htmlmin:index',
+		"cssmin",
+		"openui5_preload",
+		"connect"
+	]);
 };
