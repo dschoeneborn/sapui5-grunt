@@ -1,0 +1,17 @@
+{
+  "name": "grunt-sapui5_test",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt-contrib-clean": "latest",
+    "grunt-xmlmin": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-mkdir": "latest",
+    "grunt-openui5": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-htmlmin": "^1.0.0"
+  },
+  "dependencies": {
+    "grunt": "^1.0.3"
+  }
+}
