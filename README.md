@@ -2,6 +2,15 @@
 Gruntfile.js and npm package.json für SAPUI5 Projects.  
 The application files must be in the webapp folder. However, the name and path can be changed in the Gruntfile.js.
 
+# Installation
+Install Node.js to get npm.  
+https://nodejs.org/en/
+
+Install grunt:
+``` shell
+npm install -g grunt-cli
+```
+
 ## Default Tasks
 * Creates /dist folder
 * Creates -dbg files
